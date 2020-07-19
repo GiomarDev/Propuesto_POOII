@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="85b2d6bc4ef84b91819406cb1bcdf067" Name="Diagram1">
+        <EntityTypeShape EntityType="POOIIModel.Categorias" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="POOIIModel.Productos" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POOIIModel.Proveedores" Width="1.5" PointX="3" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="POOIIModel.Cargos" Width="1.5" PointX="0.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="POOIIModel.Distritos" Width="1.5" PointX="0.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="POOIIModel.Empleados" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="POOIIModel.Clientes" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POOIIModel.Paises" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="POOIIModel.PedidosCabecera" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="POOIIModel.PedidosDetalle" Width="1.5" PointX="7.5" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="POOIIModel.FK_Productos_Categorias" ManuallyRouted="false" />
+        <AssociationConnector Association="POOIIModel.FK_PedidosDetalle_Productos" ManuallyRouted="false" />
+        <AssociationConnector Association="POOIIModel.FK_Productos_Proveedores" ManuallyRouted="false" />
+        <AssociationConnector Association="POOIIModel.FK_Proveedores_Paises" ManuallyRouted="false" />
+        <AssociationConnector Association="POOIIModel.FK_Empleados_Cargos" ManuallyRouted="false" />
+        <AssociationConnector Association="POOIIModel.FK_Empleados_Distritos" ManuallyRouted="false" />
+        <AssociationConnector Association="POOIIModel.FK_PedidosCabecera_Empleados" ManuallyRouted="false" />
+        <AssociationConnector Association="POOIIModel.FK_Clientes_Paises" ManuallyRouted="false" />
+        <AssociationConnector Association="POOIIModel.FK_PedidosCabecera_Clientes" ManuallyRouted="false" />
+        <AssociationConnector Association="POOIIModel.FK_PedidosCabecera_Paises" ManuallyRouted="false" />
+        <AssociationConnector Association="POOIIModel.FK_PedidosDetalle_PedidosCabecera" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

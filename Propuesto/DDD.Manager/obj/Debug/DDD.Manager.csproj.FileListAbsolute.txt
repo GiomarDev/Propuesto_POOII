@@ -1,0 +1,13 @@
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Manager\bin\Debug\DDD.Manager.dll
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Manager\bin\Debug\DDD.Manager.pdb
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Manager\bin\Debug\DDD.Dominios.dll
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Manager\bin\Debug\DDD.Entidadess.dll
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Manager\bin\Debug\DDD.ADOSql.dll
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Manager\bin\Debug\DDD.Dominios.pdb
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Manager\bin\Debug\DDD.Entidadess.pdb
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Manager\bin\Debug\DDD.ADOSql.pdb
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Manager\obj\Debug\DDD.Manager.csprojAssemblyReference.cache
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Manager\obj\Debug\DDD.Manager.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Manager\obj\Debug\DDD.Manager.csproj.CopyComplete
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Manager\obj\Debug\DDD.Manager.dll
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Manager\obj\Debug\DDD.Manager.pdb

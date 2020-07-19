@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="POOIIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Foto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Productos" Relationship="Self.FK_Productos_Categorias" FromRole="Categorias" ToRole="Productos" />
+  </EntityType>
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="IdProducto" />
+    </Key>
+    <Property Name="IdProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdProveedor" Type="Int32" />
+    <Property Name="IdCategoria" Type="Int32" />
+    <Property Name="CantXUnidad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PrecioUnitario" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="UnidadesEnExistencia" Type="Int32" Nullable="false" />
+    <Property Name="UnidadesEnPedido" Type="Int32" Nullable="false" />
+    <Property Name="Foto" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Categorias" Relationship="Self.FK_Productos_Categorias" FromRole="Productos" ToRole="Categorias" />
+    <NavigationProperty Name="PedidosDetalle" Relationship="Self.FK_PedidosDetalle_Productos" FromRole="Productos" ToRole="PedidosDetalle" />
+    <NavigationProperty Name="Proveedores" Relationship="Self.FK_Productos_Proveedores" FromRole="Productos" ToRole="Proveedores" />
+  </EntityType>
+  <EntityType Name="Proveedores">
+    <Key>
+      <PropertyRef Name="IdProveedor" />
+    </Key>
+    <Property Name="IdProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NombreContacto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CargoContacto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdPais" Type="Int32" Nullable="false" />
+    <Property Name="Telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fax" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Productos" Relationship="Self.FK_Productos_Proveedores" FromRole="Proveedores" ToRole="Productos" />
+    <NavigationProperty Name="Paises" Relationship="Self.FK_Proveedores_Paises" FromRole="Proveedores" ToRole="Paises" />
+  </EntityType>
+  <EntityType Name="Cargos">
+    <Key>
+      <PropertyRef Name="IdCargo" />
+    </Key>
+    <Property Name="IdCargo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Empleados" Relationship="Self.FK_Empleados_Cargos" FromRole="Cargos" ToRole="Empleados" />
+  </EntityType>
+  <EntityType Name="Distritos">
+    <Key>
+      <PropertyRef Name="IdDistrito" />
+    </Key>
+    <Property Name="IdDistrito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Empleados" Relationship="Self.FK_Empleados_Distritos" FromRole="Distritos" ToRole="Empleados" />
+  </EntityType>
+  <EntityType Name="Empleados">
+    <Key>
+      <PropertyRef Name="IdEmpleado" />
+    </Key>
+    <Property Name="IdEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Nombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Direccion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdDistrito" Type="Int32" />
+    <Property Name="Telefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="IdCargo" Type="Int32" />
+    <Property Name="FechaContratacion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Cargos" Relationship="Self.FK_Empleados_Cargos" FromRole="Empleados" ToRole="Cargos" />
+    <NavigationProperty Name="Distritos" Relationship="Self.FK_Empleados_Distritos" FromRole="Empleados" ToRole="Distritos" />
+    <NavigationProperty Name="PedidosCabecera" Relationship="Self.FK_PedidosCabecera_Empleados" FromRole="Empleados" ToRole="PedidosCabecera" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="IdCliente" />
+    </Key>
+    <Property Name="Nombre" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Direccion" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdPais" Type="Int32" />
+    <Property Name="Telefono" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IdCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Paises" Relationship="Self.FK_Clientes_Paises" FromRole="Clientes" ToRole="Paises" />
+    <NavigationProperty Name="PedidosCabecera" Relationship="Self.FK_PedidosCabecera_Clientes" FromRole="Clientes" ToRole="PedidosCabecera" />
+  </EntityType>
+  <EntityType Name="Paises">
+    <Key>
+      <PropertyRef Name="IdPais" />
+    </Key>
+    <Property Name="IdPais" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Proveedores" Relationship="Self.FK_Proveedores_Paises" FromRole="Paises" ToRole="Proveedores" />
+    <NavigationProperty Name="Clientes" Relationship="Self.FK_Clientes_Paises" FromRole="Paises" ToRole="Clientes" />
+    <NavigationProperty Name="PedidosCabecera" Relationship="Self.FK_PedidosCabecera_Paises" FromRole="Paises" ToRole="PedidosCabecera" />
+  </EntityType>
+  <EntityType Name="PedidosCabecera">
+    <Key>
+      <PropertyRef Name="IdPedido" />
+    </Key>
+    <Property Name="IdPedido" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEmpleado" Type="Int32" />
+    <Property Name="FechaPedido" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaEntrega" Type="DateTime" Precision="3" />
+    <Property Name="FechaEnvio" Type="DateTime" Precision="3" />
+    <Property Name="EnvioPedido" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="CantidadPedido" Type="Int32" />
+    <Property Name="Destinatario" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="DireccionDestinatario" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="CiudadDestinatario" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="ReferenciaDestnatario" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="DepartamentoDestinatario" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="IdCliente" Type="Int32" Nullable="false" />
+    <Property Name="IdPaisDestinatario" Type="Int32" />
+    <NavigationProperty Name="Empleados" Relationship="Self.FK_PedidosCabecera_Empleados" FromRole="PedidosCabecera" ToRole="Empleados" />
+    <NavigationProperty Name="Clientes" Relationship="Self.FK_PedidosCabecera_Clientes" FromRole="PedidosCabecera" ToRole="Clientes" />
+    <NavigationProperty Name="Paises" Relationship="Self.FK_PedidosCabecera_Paises" FromRole="PedidosCabecera" ToRole="Paises" />
+    <NavigationProperty Name="PedidosDetalle" Relationship="Self.FK_PedidosDetalle_PedidosCabecera" FromRole="PedidosCabecera" ToRole="PedidosDetalle" />
+  </EntityType>
+  <EntityType Name="PedidosDetalle">
+    <Key>
+      <PropertyRef Name="IdDetalle" />
+    </Key>
+    <Property Name="IdPedido" Type="Int32" Nullable="false" />
+    <Property Name="IdProducto" Type="Int32" Nullable="false" />
+    <Property Name="PrecioUnidad" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="Cantidad" Type="Int16" Nullable="false" />
+    <Property Name="Descuento" Type="Double" Nullable="false" />
+    <Property Name="IdDetalle" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Productos" Relationship="Self.FK_PedidosDetalle_Productos" FromRole="PedidosDetalle" ToRole="Productos" />
+    <NavigationProperty Name="PedidosCabecera" Relationship="Self.FK_PedidosDetalle_PedidosCabecera" FromRole="PedidosDetalle" ToRole="PedidosCabecera" />
+  </EntityType>
+  <Association Name="FK_Productos_Categorias">
+    <End Role="Categorias" Type="Self.Categorias" Multiplicity="0..1" />
+    <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorias">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PedidosDetalle_Productos">
+    <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
+    <End Role="PedidosDetalle" Type="Self.PedidosDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="PedidosDetalle">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_Proveedores">
+    <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
+    <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedores">
+        <PropertyRef Name="IdProveedor" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="IdProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proveedores_Paises">
+    <End Role="Paises" Type="Self.Paises" Multiplicity="1" />
+    <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="IdPais" />
+      </Principal>
+      <Dependent Role="Proveedores">
+        <PropertyRef Name="IdPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_Cargos">
+    <End Role="Cargos" Type="Self.Cargos" Multiplicity="0..1" />
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargos">
+        <PropertyRef Name="IdCargo" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IdCargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_Distritos">
+    <End Role="Distritos" Type="Self.Distritos" Multiplicity="0..1" />
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distritos">
+        <PropertyRef Name="IdDistrito" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IdDistrito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PedidosCabecera_Empleados">
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="0..1" />
+    <End Role="PedidosCabecera" Type="Self.PedidosCabecera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleados">
+        <PropertyRef Name="IdEmpleado" />
+      </Principal>
+      <Dependent Role="PedidosCabecera">
+        <PropertyRef Name="IdEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Clientes_Paises">
+    <End Role="Paises" Type="Self.Paises" Multiplicity="0..1" />
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="IdPais" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="IdPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PedidosCabecera_Clientes">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
+    <End Role="PedidosCabecera" Type="Self.PedidosCabecera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="IdCliente" />
+      </Principal>
+      <Dependent Role="PedidosCabecera">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PedidosCabecera_Paises">
+    <End Role="Paises" Type="Self.Paises" Multiplicity="0..1" />
+    <End Role="PedidosCabecera" Type="Self.PedidosCabecera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="IdPais" />
+      </Principal>
+      <Dependent Role="PedidosCabecera">
+        <PropertyRef Name="IdPaisDestinatario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PedidosDetalle_PedidosCabecera">
+    <End Role="PedidosCabecera" Type="Self.PedidosCabecera" Multiplicity="1" />
+    <End Role="PedidosDetalle" Type="Self.PedidosDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PedidosCabecera">
+        <PropertyRef Name="IdPedido" />
+      </Principal>
+      <Dependent Role="PedidosDetalle">
+        <PropertyRef Name="IdPedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="POOIIEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categorias" EntityType="Self.Categorias" />
+    <EntitySet Name="Productos" EntityType="Self.Productos" />
+    <EntitySet Name="Proveedores" EntityType="Self.Proveedores" />
+    <EntitySet Name="Cargos" EntityType="Self.Cargos" />
+    <EntitySet Name="Distritos" EntityType="Self.Distritos" />
+    <EntitySet Name="Empleados" EntityType="Self.Empleados" />
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" />
+    <EntitySet Name="Paises" EntityType="Self.Paises" />
+    <EntitySet Name="PedidosCabecera" EntityType="Self.PedidosCabecera" />
+    <EntitySet Name="PedidosDetalle" EntityType="Self.PedidosDetalle" />
+    <AssociationSet Name="FK_Productos_Categorias" Association="Self.FK_Productos_Categorias">
+      <End Role="Categorias" EntitySet="Categorias" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PedidosDetalle_Productos" Association="Self.FK_PedidosDetalle_Productos">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="PedidosDetalle" EntitySet="PedidosDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Proveedores" Association="Self.FK_Productos_Proveedores">
+      <End Role="Proveedores" EntitySet="Proveedores" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proveedores_Paises" Association="Self.FK_Proveedores_Paises">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="Proveedores" EntitySet="Proveedores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_Cargos" Association="Self.FK_Empleados_Cargos">
+      <End Role="Cargos" EntitySet="Cargos" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_Distritos" Association="Self.FK_Empleados_Distritos">
+      <End Role="Distritos" EntitySet="Distritos" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PedidosCabecera_Empleados" Association="Self.FK_PedidosCabecera_Empleados">
+      <End Role="Empleados" EntitySet="Empleados" />
+      <End Role="PedidosCabecera" EntitySet="PedidosCabecera" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Clientes_Paises" Association="Self.FK_Clientes_Paises">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PedidosCabecera_Clientes" Association="Self.FK_PedidosCabecera_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="PedidosCabecera" EntitySet="PedidosCabecera" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PedidosCabecera_Paises" Association="Self.FK_PedidosCabecera_Paises">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="PedidosCabecera" EntitySet="PedidosCabecera" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PedidosDetalle_PedidosCabecera" Association="Self.FK_PedidosDetalle_PedidosCabecera">
+      <End Role="PedidosCabecera" EntitySet="PedidosCabecera" />
+      <End Role="PedidosDetalle" EntitySet="PedidosDetalle" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

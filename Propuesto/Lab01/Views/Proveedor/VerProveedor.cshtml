@@ -1,0 +1,84 @@
+﻿@model DDD.Entidadess.Proveedor
+
+@{
+    ViewBag.Title = "VerProveedor";
+}
+
+<h2>VerProveedor</h2>
+
+<div>
+    <h4>Proveedor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdProveedor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdProveedor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreContacto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreContacto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CargoContacto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CargoContacto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPais)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdPais)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fax)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

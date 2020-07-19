@@ -1,0 +1,6 @@
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Entidadess\bin\Debug\DDD.Entidadess.dll
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Entidadess\bin\Debug\DDD.Entidadess.pdb
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Entidadess\obj\Debug\DDD.Entidadess.csprojAssemblyReference.cache
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Entidadess\obj\Debug\DDD.Entidadess.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Entidadess\obj\Debug\DDD.Entidadess.dll
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Entidadess\obj\Debug\DDD.Entidadess.pdb

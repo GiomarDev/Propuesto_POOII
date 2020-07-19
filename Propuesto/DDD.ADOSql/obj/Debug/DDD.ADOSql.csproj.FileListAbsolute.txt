@@ -1,0 +1,9 @@
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.ADOSql\bin\Debug\DDD.ADOSql.dll
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.ADOSql\bin\Debug\DDD.ADOSql.pdb
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.ADOSql\bin\Debug\DDD.Entidadess.dll
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.ADOSql\bin\Debug\DDD.Entidadess.pdb
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.ADOSql\obj\Debug\DDD.ADOSql.csprojAssemblyReference.cache
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.ADOSql\obj\Debug\DDD.ADOSql.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.ADOSql\obj\Debug\DDD.ADOSql.csproj.CopyComplete
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.ADOSql\obj\Debug\DDD.ADOSql.dll
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.ADOSql\obj\Debug\DDD.ADOSql.pdb

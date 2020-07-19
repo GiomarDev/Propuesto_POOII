@@ -1,0 +1,11 @@
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Dominios\bin\Debug\DDD.Dominios.dll
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Dominios\bin\Debug\DDD.Dominios.pdb
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Dominios\bin\Debug\DDD.ADOSql.dll
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Dominios\bin\Debug\DDD.Entidadess.dll
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Dominios\bin\Debug\DDD.ADOSql.pdb
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Dominios\bin\Debug\DDD.Entidadess.pdb
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Dominios\obj\Debug\DDD.Dominios.csprojAssemblyReference.cache
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Dominios\obj\Debug\DDD.Dominios.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Dominios\obj\Debug\DDD.Dominios.csproj.CopyComplete
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Dominios\obj\Debug\DDD.Dominios.dll
+C:\Users\Usuario\Downloads\Ciclo4\POO2\Propuesto2\Propuesto\DDD.Dominios\obj\Debug\DDD.Dominios.pdb

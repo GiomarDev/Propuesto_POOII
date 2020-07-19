@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="POOIIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="Foto" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="IdProducto" />
+    </Key>
+    <Property Name="IdProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="IdProveedor" Type="int" />
+    <Property Name="IdCategoria" Type="int" />
+    <Property Name="CantXUnidad" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PrecioUnitario" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="UnidadesEnExistencia" Type="int" Nullable="false" />
+    <Property Name="UnidadesEnPedido" Type="int" Nullable="false" />
+    <Property Name="Foto" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Proveedores">
+    <Key>
+      <PropertyRef Name="IdProveedor" />
+    </Key>
+    <Property Name="IdProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="NombreContacto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="CargoContacto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdPais" Type="int" Nullable="false" />
+    <Property Name="Telefono" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Fax" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cargos">
+    <Key>
+      <PropertyRef Name="IdCargo" />
+    </Key>
+    <Property Name="IdCargo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Distritos">
+    <Key>
+      <PropertyRef Name="IdDistrito" />
+    </Key>
+    <Property Name="IdDistrito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Empleados">
+    <Key>
+      <PropertyRef Name="IdEmpleado" />
+    </Key>
+    <Property Name="IdEmpleado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Apellidos" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Nombres" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="IdDistrito" Type="int" />
+    <Property Name="Telefono" Type="varchar" MaxLength="15" />
+    <Property Name="IdCargo" Type="int" />
+    <Property Name="FechaContratacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clientes">
+    <Key>
+      <PropertyRef Name="IdCliente" />
+    </Key>
+    <Property Name="Nombre" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="IdPais" Type="int" />
+    <Property Name="Telefono" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="IdCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Paises">
+    <Key>
+      <PropertyRef Name="IdPais" />
+    </Key>
+    <Property Name="IdPais" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PedidosCabecera">
+    <Key>
+      <PropertyRef Name="IdPedido" />
+    </Key>
+    <Property Name="IdPedido" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpleado" Type="int" />
+    <Property Name="FechaPedido" Type="datetime" Nullable="false" />
+    <Property Name="FechaEntrega" Type="datetime" />
+    <Property Name="FechaEnvio" Type="datetime" />
+    <Property Name="EnvioPedido" Type="char" MaxLength="1" />
+    <Property Name="CantidadPedido" Type="int" />
+    <Property Name="Destinatario" Type="varchar" MaxLength="40" />
+    <Property Name="DireccionDestinatario" Type="varchar" MaxLength="60" />
+    <Property Name="CiudadDestinatario" Type="varchar" MaxLength="60" />
+    <Property Name="ReferenciaDestnatario" Type="varchar" MaxLength="60" />
+    <Property Name="DepartamentoDestinatario" Type="varchar" MaxLength="60" />
+    <Property Name="IdCliente" Type="int" Nullable="false" />
+    <Property Name="IdPaisDestinatario" Type="int" />
+  </EntityType>
+  <EntityType Name="PedidosDetalle">
+    <Key>
+      <PropertyRef Name="IdDetalle" />
+    </Key>
+    <Property Name="IdPedido" Type="int" Nullable="false" />
+    <Property Name="IdProducto" Type="int" Nullable="false" />
+    <Property Name="PrecioUnidad" Type="decimal" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="Cantidad" Type="smallint" Nullable="false" />
+    <Property Name="Descuento" Type="float" Nullable="false" />
+    <Property Name="IdDetalle" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Clientes_Paises">
+    <End Role="Paises" Type="Self.Paises" Multiplicity="0..1" />
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="IdPais" />
+      </Principal>
+      <Dependent Role="Clientes">
+        <PropertyRef Name="IdPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_Cargos">
+    <End Role="Cargos" Type="Self.Cargos" Multiplicity="0..1" />
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargos">
+        <PropertyRef Name="IdCargo" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IdCargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Empleados_Distritos">
+    <End Role="Distritos" Type="Self.Distritos" Multiplicity="0..1" />
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distritos">
+        <PropertyRef Name="IdDistrito" />
+      </Principal>
+      <Dependent Role="Empleados">
+        <PropertyRef Name="IdDistrito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PedidosCabecera_Clientes">
+    <End Role="Clientes" Type="Self.Clientes" Multiplicity="1" />
+    <End Role="PedidosCabecera" Type="Self.PedidosCabecera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clientes">
+        <PropertyRef Name="IdCliente" />
+      </Principal>
+      <Dependent Role="PedidosCabecera">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PedidosCabecera_Empleados">
+    <End Role="Empleados" Type="Self.Empleados" Multiplicity="0..1" />
+    <End Role="PedidosCabecera" Type="Self.PedidosCabecera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empleados">
+        <PropertyRef Name="IdEmpleado" />
+      </Principal>
+      <Dependent Role="PedidosCabecera">
+        <PropertyRef Name="IdEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PedidosCabecera_Paises">
+    <End Role="Paises" Type="Self.Paises" Multiplicity="0..1" />
+    <End Role="PedidosCabecera" Type="Self.PedidosCabecera" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="IdPais" />
+      </Principal>
+      <Dependent Role="PedidosCabecera">
+        <PropertyRef Name="IdPaisDestinatario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PedidosDetalle_PedidosCabecera">
+    <End Role="PedidosCabecera" Type="Self.PedidosCabecera" Multiplicity="1" />
+    <End Role="PedidosDetalle" Type="Self.PedidosDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PedidosCabecera">
+        <PropertyRef Name="IdPedido" />
+      </Principal>
+      <Dependent Role="PedidosDetalle">
+        <PropertyRef Name="IdPedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PedidosDetalle_Productos">
+    <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
+    <End Role="PedidosDetalle" Type="Self.PedidosDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="PedidosDetalle">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_Categorias">
+    <End Role="Categorias" Type="Self.Categorias" Multiplicity="0..1" />
+    <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorias">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Productos_Proveedores">
+    <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
+    <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedores">
+        <PropertyRef Name="IdProveedor" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="IdProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Proveedores_Paises">
+    <End Role="Paises" Type="Self.Paises" Multiplicity="1" />
+    <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paises">
+        <PropertyRef Name="IdPais" />
+      </Principal>
+      <Dependent Role="Proveedores">
+        <PropertyRef Name="IdPais" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="POOIIModelStoreContainer">
+    <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="Compras" store:Type="Tables" />
+    <EntitySet Name="Productos" EntityType="Self.Productos" Schema="Compras" store:Type="Tables" />
+    <EntitySet Name="Proveedores" EntityType="Self.Proveedores" Schema="Compras" store:Type="Tables" />
+    <EntitySet Name="Cargos" EntityType="Self.Cargos" Schema="RRHH" store:Type="Tables" />
+    <EntitySet Name="Distritos" EntityType="Self.Distritos" Schema="RRHH" store:Type="Tables" />
+    <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="RRHH" store:Type="Tables" />
+    <EntitySet Name="Clientes" EntityType="Self.Clientes" Schema="Ventas" store:Type="Tables" />
+    <EntitySet Name="Paises" EntityType="Self.Paises" Schema="Ventas" store:Type="Tables" />
+    <EntitySet Name="PedidosCabecera" EntityType="Self.PedidosCabecera" Schema="Ventas" store:Type="Tables" />
+    <EntitySet Name="PedidosDetalle" EntityType="Self.PedidosDetalle" Schema="Ventas" store:Type="Tables" />
+    <AssociationSet Name="FK_Clientes_Paises" Association="Self.FK_Clientes_Paises">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="Clientes" EntitySet="Clientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_Cargos" Association="Self.FK_Empleados_Cargos">
+      <End Role="Cargos" EntitySet="Cargos" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Empleados_Distritos" Association="Self.FK_Empleados_Distritos">
+      <End Role="Distritos" EntitySet="Distritos" />
+      <End Role="Empleados" EntitySet="Empleados" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PedidosCabecera_Clientes" Association="Self.FK_PedidosCabecera_Clientes">
+      <End Role="Clientes" EntitySet="Clientes" />
+      <End Role="PedidosCabecera" EntitySet="PedidosCabecera" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PedidosCabecera_Empleados" Association="Self.FK_PedidosCabecera_Empleados">
+      <End Role="Empleados" EntitySet="Empleados" />
+      <End Role="PedidosCabecera" EntitySet="PedidosCabecera" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PedidosCabecera_Paises" Association="Self.FK_PedidosCabecera_Paises">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="PedidosCabecera" EntitySet="PedidosCabecera" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PedidosDetalle_PedidosCabecera" Association="Self.FK_PedidosDetalle_PedidosCabecera">
+      <End Role="PedidosCabecera" EntitySet="PedidosCabecera" />
+      <End Role="PedidosDetalle" EntitySet="PedidosDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PedidosDetalle_Productos" Association="Self.FK_PedidosDetalle_Productos">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="PedidosDetalle" EntitySet="PedidosDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Categorias" Association="Self.FK_Productos_Categorias">
+      <End Role="Categorias" EntitySet="Categorias" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Productos_Proveedores" Association="Self.FK_Productos_Proveedores">
+      <End Role="Proveedores" EntitySet="Proveedores" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Proveedores_Paises" Association="Self.FK_Proveedores_Paises">
+      <End Role="Paises" EntitySet="Paises" />
+      <End Role="Proveedores" EntitySet="Proveedores" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
